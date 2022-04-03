@@ -1,9 +1,19 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import useFontFaceObserver from 'use-font-face-observer'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const isFontListLoaded = useFontFaceObserver([
+    {
+      family: `Roboto`,
+      style: `italic`,
+      weight: `bold`,
+      stretch: `condensed`,
+    },
+  ]);
+  console.log(isFontListLoaded)  
   return (
     <div className={styles.container}>
       <Head>
